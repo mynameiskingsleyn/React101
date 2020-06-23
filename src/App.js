@@ -1,12 +1,17 @@
 import React from 'react';
 import logo from './logo.svg';
 import './App.css';
+import Myfunction from './Components/FirstComponents/FirstComponent';
+import One from  './Components/One/OneComponent';
+import Details from './data/Details';
+import FirstPractice from './Components/Practice/PropPractice';
 // 1. Expressions in jsx
 const element = 'hello my friend';
 // 2. Specifying attributes with jsx
 const jsxAttributes = <img src={logo} width="25%" height="25%" className="App-logo" alt="logo" />;
 // 3. Objects
 const person = {Name:'Jacob',Age:"28", Address:"5540 whos street"}
+
 function App() {
   // return (
   //   <div className="App">
@@ -26,17 +31,21 @@ function App() {
   //     </header>
   //   </div>
   // );
+  //   return (
+  //       <div className="App">
+  //           // <One p={person} j={jsxAttributes} e={element} />
+  //       </div>
+  //
+  //   )
+    console.log(Details);
+    const PersonData = Details.map(item=> <FirstPractice PersonProp={item} />)
     return (
         <div className="App">
-            <h1> this is where we start </h1>
-            <p>{element}</p>
-    {jsxAttributes}
-            <div>
-                <h3> {person.Name} </h3> is a user and he is {person.Age} years old
-            </div>
-        </div>
 
-    )
+            {PersonData}
+
+        </div>
+    );
 }
 
 export default App;
