@@ -5,12 +5,14 @@ import Myfunction from './Components/FirstComponents/FirstComponent';
 import One from  './Components/One/OneComponent';
 import Details from './data/Details';
 import FirstPractice from './Components/Practice/PropPractice';
+import FirstClass from "./Components/Classes/FirstClassComponent";
+import {Link} from 'react-router-dom';
 // 1. Expressions in jsx
 const element = 'hello my friend';
 // 2. Specifying attributes with jsx
-const jsxAttributes = <img src={logo} width="25%" height="25%" className="App-logo" alt="logo" />;
+//const jsxAttributes = <img src={logo} width="25%" height="25%" className="App-logo" alt="logo" />;
 // 3. Objects
-const person = {Name:'Jacob',Age:"28", Address:"5540 whos street"}
+//const person = {Name:'Jacob',Age:"28", Address:"5540 whos street"}
 
 function App() {
   // return (
@@ -37,15 +39,25 @@ function App() {
   //       </div>
   //
   //   )
-    console.log(Details);
+    //console.log(Details);
     const PersonData = Details.map(item=> <FirstPractice PersonProp={item} />)
+    // return (
+    //     <div className="App">
+    //         {PersonData}
+    //     </div>
+    // );
+    // return (
+    //     <div>
+    //         <FirstClass />
+    //     </div>
+    // )
     return (
-        <div className="App">
-
-            {PersonData}
-
+        <div>
+            <h1> Home </h1>
+            <h2> <Link to ="/contact">Go to Contact </Link> </h2>
+            <h2> <Link to ="/users"> Go to Users </Link> </h2>
         </div>
-    );
+    )
 }
 
 export default App;
